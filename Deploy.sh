@@ -1,1 +1,1 @@
-git subtree push --prefix Assets/DialogSystem origin upm --squash
+git subtree push --prefix Assets/DialogSystem origin upm
