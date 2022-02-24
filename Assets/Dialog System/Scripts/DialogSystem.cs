@@ -11,7 +11,7 @@ namespace SimpleDialogSystem
         [SerializeField]
         private IDialogView dialogView = null;
         private ISkipDialog skipDialog = null;
-
+        private bool endOfExecution = false;
         public List<DialogEvents> Events = new List<DialogEvents>();
         public System.Action ExecutionEnded; 
         public IDialogView DialogView { get => dialogView; set => dialogView = value; }
@@ -27,13 +27,17 @@ namespace SimpleDialogSystem
 
         public void Execute()
         {
+            if (endOfExecution) return;
+
             if (currentEvent >= Events.Count)
             {
                 skipDialog.SkipDialog -= SkipDialog;
                 ExecutionEnded?.Invoke();
+                endOfExecution = true;
                 Debug.Log("Dialog execution ended!");
                 return;
             }
+
             switch (Events[currentEvent].Type)  
             {
                 case DialogEvents.EventType.ShowDialog:
@@ -60,6 +64,12 @@ namespace SimpleDialogSystem
         public void SkipDialog()
         {
             if (Events[currentEvent].Type == DialogEvents.EventType.ShowDialog) ContinueExecution();
+        }
+
+        public void ResetDialog()
+        {
+            currentEvent = 0;
+            endOfExecution = false;
         }
     }
 }
