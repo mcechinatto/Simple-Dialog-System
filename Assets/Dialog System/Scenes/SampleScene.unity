@@ -602,121 +602,49 @@ MonoBehaviour:
       CharacterName: "Jo\xE3o"
       Dialog: Oi, tudo bem?
     TriggerEventType:
-      Action:
-        m_PersistentCalls:
-          m_Calls: []
+      Action: {fileID: 0}
     ListenEventType:
-      Action:
-        m_PersistentCalls:
-          m_Calls: []
+      Action: {fileID: 0}
   - Type: 0
     ShowDialogType:
       CharacterName: Maria
       Dialog: Se fude maluco!
     TriggerEventType:
-      Action:
-        m_PersistentCalls:
-          m_Calls: []
+      Action: {fileID: 0}
     ListenEventType:
-      Action:
-        m_PersistentCalls:
-          m_Calls: []
+      Action: {fileID: 0}
   - Type: 1
     ShowDialogType:
       CharacterName: Maria
       Dialog: Se fude maluco!
     TriggerEventType:
-      Action:
-        m_PersistentCalls:
-          m_Calls: []
+      Action: {fileID: 0}
     ListenEventType:
-      Action:
-        m_PersistentCalls:
-          m_Calls: []
+      Action: {fileID: 0}
   - Type: 2
     ShowDialogType:
       CharacterName: "Caz\xE9"
       Dialog: "Apareceu um cubo, man\xE9!"
     TriggerEventType:
-      Action:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 1982433173}
-            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_MethodName: SetActive
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 1
-            m_CallState: 2
+      Action: {fileID: 11400000, guid: 94c3da7f5f636ab40bffd6f96001fce9, type: 2}
     ListenEventType:
-      Action:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 1982433173}
-            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_MethodName: SetActive
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 1
-            m_CallState: 2
+      Action: {fileID: 0}
   - Type: 3
     ShowDialogType:
       CharacterName: Maria
       Dialog: Se fude maluco!
     TriggerEventType:
-      Action:
-        m_PersistentCalls:
-          m_Calls: []
+      Action: {fileID: 0}
     ListenEventType:
-      Action:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 1982433173}
-            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_MethodName: SetActive
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
+      Action: {fileID: 11400000, guid: fb8ccd3e2c0520946b9376a6abf44e97, type: 2}
   - Type: 0
     ShowDialogType:
       CharacterName: "Caz\xE9"
       Dialog: "Apareceu um cubo, man\xE9!"
     TriggerEventType:
-      Action:
-        m_PersistentCalls:
-          m_Calls: []
+      Action: {fileID: 0}
     ListenEventType:
-      Action:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 1982433173}
-            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_MethodName: SetActive
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 1
-            m_CallState: 2
+      Action: {fileID: 0}
 --- !u!4 &1015551073
 Transform:
   m_ObjectHideFlags: 0
@@ -855,13 +783,14 @@ GameObject:
   - component: {fileID: 1982433176}
   - component: {fileID: 1982433175}
   - component: {fileID: 1982433174}
+  - component: {fileID: 1982433178}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1982433174
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -882,7 +811,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982433173}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -938,3 +867,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1982433178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982433173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee0a04c383e11547b7c3f253d6724b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowCube: {fileID: 11400000, guid: 94c3da7f5f636ab40bffd6f96001fce9, type: 2}
+  ShowedCube: {fileID: 11400000, guid: fb8ccd3e2c0520946b9376a6abf44e97, type: 2}
