@@ -1,10 +1,10 @@
 using System;
-using UnityEngine.Events;
 
 namespace SimpleDialogSystem
 {
+    //This event outs the dialog execution on hold untill the action is invoked
     [Serializable]
-    public class ListenEventType : IDialogEvent
+    public class ListenToActionEvent : IDialogEvent
     {
         public Action Action = null;
         private DialogSystem dialogSystem = null;
@@ -12,10 +12,10 @@ namespace SimpleDialogSystem
         public void Execute(DialogSystem dialogSystem)
         {
             this.dialogSystem = dialogSystem;
-            Action.MyAction += ListenToEvent;
+            Action.MyAction += ListenToAction;
         }
 
-        private void ListenToEvent()
+        private void ListenToAction()
         {
             dialogSystem.ContinueExecution();
         }

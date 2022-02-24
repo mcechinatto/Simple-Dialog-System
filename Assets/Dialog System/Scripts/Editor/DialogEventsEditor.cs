@@ -18,14 +18,14 @@ namespace SimpleDialogSystem
             var typeRect = new Rect(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
             var secondRect = new Rect(position.x, position.y + 20f, position.width, EditorGUIUtility.singleLineHeight);
             var thirdRect = new Rect(position.x, position.y + 40f, position.width, EditorGUIUtility.singleLineHeight);
-            var actionRect = new Rect(position.x, position.y + 40f, position.width, EditorGUIUtility.singleLineHeight);
+
             SerializedProperty type = property.FindPropertyRelative("Type");
 
             type.intValue = EditorGUI.Popup(typeRect, "Event", type.intValue, type.enumNames);
 
-            var showDialog = property.FindPropertyRelative("ShowDialogType");
-            var triggerEvent = property.FindPropertyRelative("TriggerEventType");
-            var listenEvent = property.FindPropertyRelative("ListenEventType");
+            var showDialog = property.FindPropertyRelative("ShowDialogEvent");
+            var triggerEvent = property.FindPropertyRelative("TriggerActionEvent");
+            var listenEvent = property.FindPropertyRelative("ListenToActionEvent");
 
             switch ((DialogEvents.EventType)type.intValue)
             {
@@ -38,11 +38,11 @@ namespace SimpleDialogSystem
                     break;
                 case DialogEvents.EventType.HideDialog:                    
                     break;
-                case DialogEvents.EventType.TriggerEvent:
-                    EditorGUI.PropertyField(actionRect, triggerEvent.FindPropertyRelative("Action"));
+                case DialogEvents.EventType.TriggerAction:
+                    EditorGUI.PropertyField(secondRect, triggerEvent.FindPropertyRelative("Action"));
                     break;
-                case DialogEvents.EventType.ListenEvent:
-                    EditorGUI.PropertyField(actionRect, listenEvent.FindPropertyRelative("Action"));
+                case DialogEvents.EventType.ListenToAction:
+                    EditorGUI.PropertyField(secondRect, listenEvent.FindPropertyRelative("Action"));
                     break;                    
             }
 
@@ -51,7 +51,6 @@ namespace SimpleDialogSystem
             EditorGUI.EndProperty();
         }
 
-        //This will need to be adjusted based on what you are displaying
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
             var type = property.FindPropertyRelative("Type");
@@ -59,12 +58,12 @@ namespace SimpleDialogSystem
             switch ((DialogEvents.EventType)type.intValue)
             {
                 case DialogEvents.EventType.ShowDialog:
-                    return (40 - EditorGUIUtility.singleLineHeight) + (EditorGUIUtility.singleLineHeight * 2);
-                case DialogEvents.EventType.TriggerEvent:
-                case DialogEvents.EventType.ListenEvent:
-                    return (120 - EditorGUIUtility.singleLineHeight) + (EditorGUIUtility.singleLineHeight * 2);
+                    return (50 - EditorGUIUtility.singleLineHeight) + (EditorGUIUtility.singleLineHeight * 2);
+                case DialogEvents.EventType.TriggerAction:
+                case DialogEvents.EventType.ListenToAction:
+                    return (30 - EditorGUIUtility.singleLineHeight) + (EditorGUIUtility.singleLineHeight * 2);
                 default:
-                    return (5 - EditorGUIUtility.singleLineHeight) + (EditorGUIUtility.singleLineHeight * 2);
+                    return (10 - EditorGUIUtility.singleLineHeight) + (EditorGUIUtility.singleLineHeight * 2);
             }
         }
     }

@@ -10,18 +10,17 @@ namespace SimpleDialogSystem
         private int currentEvent = 0;
         [SerializeField]
         private IDialogView dialogView = null;
-        private ISkipDialogInput skipDialogInput = null;
+        private ISkipDialog skipDialog = null;
 
         public List<DialogEvents> Events = new List<DialogEvents>();
         public System.Action ExecutionEnded; 
         public IDialogView DialogView { get => dialogView; set => dialogView = value; }
-        public ISkipDialogInput SkipDialogInput { get => skipDialogInput; set => skipDialogInput = value; }
 
         private void Start()
         {
             dialogView = FindObjectsOfType<MonoBehaviour>().OfType<IDialogView>().FirstOrDefault();
-            skipDialogInput = FindObjectsOfType<MonoBehaviour>().OfType<ISkipDialogInput>().FirstOrDefault();
-            skipDialogInput.SkipDialog += SkipDialog;
+            skipDialog = FindObjectsOfType<MonoBehaviour>().OfType<ISkipDialog>().FirstOrDefault();
+            skipDialog.SkipDialog += SkipDialog;
 
             Execute();
         }
@@ -30,23 +29,24 @@ namespace SimpleDialogSystem
         {
             if (currentEvent >= Events.Count)
             {
-                skipDialogInput.SkipDialog -= SkipDialog;
+                skipDialog.SkipDialog -= SkipDialog;
                 ExecutionEnded?.Invoke();
+                Debug.Log("Dialog execution ended!");
                 return;
             }
             switch (Events[currentEvent].Type)  
             {
                 case DialogEvents.EventType.ShowDialog:
-                    Events[currentEvent].ShowDialogType.Execute(this);
+                    Events[currentEvent].ShowDialogEvent.Execute(this);
                     break;
                 case DialogEvents.EventType.HideDialog:
-                    Events[currentEvent].HideDialogType.Execute(this);
+                    Events[currentEvent].HideDialogEvent.Execute(this);
                     break;
-                case DialogEvents.EventType.TriggerEvent:
-                    Events[currentEvent].TriggerEventType.Execute(this);
+                case DialogEvents.EventType.TriggerAction:
+                    Events[currentEvent].TriggerActionEvent.Execute(this);
                     break;
-                case DialogEvents.EventType.ListenEvent:
-                    Events[currentEvent].ListenEventType.Execute(this);
+                case DialogEvents.EventType.ListenToAction:
+                    Events[currentEvent].ListenToActionEvent.Execute(this);
                     break;
             }
         }

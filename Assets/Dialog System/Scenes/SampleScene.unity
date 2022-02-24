@@ -598,52 +598,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Events:
   - Type: 0
-    ShowDialogType:
-      CharacterName: "Jo\xE3o"
-      Dialog: Oi, tudo bem?
-    TriggerEventType:
+    ShowDialogEvent:
+      CharacterName: Jonh
+      Dialog: Hi, how are you?
+    TriggerActionEvent:
       Action: {fileID: 0}
-    ListenEventType:
+    ListenToActionEvent:
       Action: {fileID: 0}
   - Type: 0
-    ShowDialogType:
-      CharacterName: Maria
-      Dialog: Se fude maluco!
-    TriggerEventType:
+    ShowDialogEvent:
+      CharacterName: Mary
+      Dialog: I'm fine, thanks!
+    TriggerActionEvent:
       Action: {fileID: 0}
-    ListenEventType:
+    ListenToActionEvent:
       Action: {fileID: 0}
   - Type: 1
-    ShowDialogType:
-      CharacterName: Maria
-      Dialog: Se fude maluco!
-    TriggerEventType:
+    ShowDialogEvent:
+      CharacterName: 
+      Dialog: 
+    TriggerActionEvent:
       Action: {fileID: 0}
-    ListenEventType:
+    ListenToActionEvent:
       Action: {fileID: 0}
   - Type: 2
-    ShowDialogType:
-      CharacterName: "Caz\xE9"
-      Dialog: "Apareceu um cubo, man\xE9!"
-    TriggerEventType:
+    ShowDialogEvent:
+      CharacterName: 
+      Dialog: 
+    TriggerActionEvent:
       Action: {fileID: 11400000, guid: 94c3da7f5f636ab40bffd6f96001fce9, type: 2}
-    ListenEventType:
+    ListenToActionEvent:
       Action: {fileID: 0}
   - Type: 3
-    ShowDialogType:
-      CharacterName: Maria
-      Dialog: Se fude maluco!
-    TriggerEventType:
+    ShowDialogEvent:
+      CharacterName: 
+      Dialog: 
+    TriggerActionEvent:
       Action: {fileID: 0}
-    ListenEventType:
+    ListenToActionEvent:
       Action: {fileID: 11400000, guid: fb8ccd3e2c0520946b9376a6abf44e97, type: 2}
   - Type: 0
-    ShowDialogType:
-      CharacterName: "Caz\xE9"
-      Dialog: "Apareceu um cubo, man\xE9!"
-    TriggerEventType:
+    ShowDialogEvent:
+      CharacterName: John
+      Dialog: Look a cube!
+    TriggerActionEvent:
       Action: {fileID: 0}
-    ListenEventType:
+    ListenToActionEvent:
       Action: {fileID: 0}
 --- !u!4 &1015551073
 Transform:

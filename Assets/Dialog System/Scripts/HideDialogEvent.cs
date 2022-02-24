@@ -3,9 +3,8 @@ using System;
 namespace SimpleDialogSystem
 {
     [Serializable]
-    public class HideDialogType : IDialogEvent
+    public class HideDialogEvent : IDialogEvent
     {
-
         public void Execute(DialogSystem dialogSystem)
         {
             dialogSystem.DialogView.HideDialog();

@@ -1,9 +1,7 @@
-using System;
-
 namespace SimpleDialogSystem
 {
     [System.Serializable]
-    public class ShowDialogType : IDialogEvent
+    public class ShowDialogEvent : IDialogEvent
     {
         public string CharacterName;
         public string Dialog;

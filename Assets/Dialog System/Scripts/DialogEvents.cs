@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 namespace SimpleDialogSystem
 {
     [System.Serializable]
@@ -11,14 +7,14 @@ namespace SimpleDialogSystem
         {
             ShowDialog,
             HideDialog,
-            TriggerEvent,
-            ListenEvent,
+            TriggerAction,
+            ListenToAction,
         }
 
         public EventType Type = EventType.ShowDialog;
-        public ShowDialogType ShowDialogType = new ShowDialogType();
-        public HideDialogType HideDialogType = new HideDialogType();
-        public TriggerEventType TriggerEventType = new TriggerEventType();
-        public ListenEventType ListenEventType = new ListenEventType();
+        public ShowDialogEvent ShowDialogEvent = new ShowDialogEvent();
+        public HideDialogEvent HideDialogEvent = new HideDialogEvent();
+        public TriggerActionEvent TriggerActionEvent = new TriggerActionEvent();
+        public ListenToActionEvent ListenToActionEvent = new ListenToActionEvent();
     }
 }

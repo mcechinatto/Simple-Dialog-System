@@ -4,7 +4,7 @@ using UnityEngine.Events;
 namespace SimpleDialogSystem
 {
     [Serializable]
-    public class TriggerEventType : IDialogEvent
+    public class TriggerActionEvent : IDialogEvent
     {
         public Action Action = null;
 
